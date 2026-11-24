@@ -4,6 +4,33 @@ All notable changes to `phil/ux-css` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.6.0-alpha - 2026-11-24
+
+### Added
+
+- `css/layers/components.css`: the range of the date picker, `isDatePicker.hasRange`, its two fields in
+  `isDatePickerPart` labels and its two months in `isDatePickerMonths`, each an `isDatePickerCalendar`, side by side
+  where the panel holds both and stacked where it does not; the days of the range, marked by `data-range`, filled and
+  underlined, its start and its end filled loud and bold, in the colours of the selection of the system under forced
+  colours, the fill fading in only without `prefers-reduced-motion: reduce`.
+- `css/tokens/palette.css`: `--phil-neutral-15`, `oklch(0.15 0.012 265)`, `#090B10`.
+- `css/layers/components.css`: `isThemeSwitcher`, the group of the choice of the colour scheme, without the frame of a
+  `fieldset`; `isStickyHeader`, a header kept at the top of the screen, the scroll padding of the root kept below it
+  through `--phil-sticky-header-size`, and `hasHideOnScroll`, which slides it away while `data-hidden` is set, at once
+  under `prefers-reduced-motion: reduce`; `isTimeline`, `isTimelineItem`, `isTimelineDate` and `isTimelineContent`,
+  dated entries down a line with their markers, in the colour of the text under forced colours; `hasFloatingLabel`, a
+  label inside its empty control that moves above it once the control has a value or the focus, without motion under
+  `prefers-reduced-motion: reduce`.
+
+### Changed
+
+- The dark surface, `--phil-color-surface` in the dark scheme, is `--phil-neutral-15`: the text reaches 17:1 on it
+  and the muted text 7.3:1, both above the 7:1 of success criterion 1.4.6.
+- The heights of the screen are in `svh`, which stays put while the bars of a phone's browser come and go:
+  `isFullHeight` at `100svh`, `isBleed` at `40svh` below 48rem, and the list of `isSelectViewport` within the screen.
+  The dialogs, the sheets and the lightbox keep `dvh`, which they fill.
+- `doc/themes.md` writes the reader's choice of scheme on the root, or nothing for the system's.
+
 ## 0.5.0-alpha - 2026-11-12
 
 ### Added
