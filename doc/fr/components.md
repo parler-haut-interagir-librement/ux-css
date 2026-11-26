@@ -1,4 +1,4 @@
-<!-- phil-dev source-sha256=4ce5893b4e094b4f5bad86385b151be0e469559b05b2aa0ce82213ccc8e01e82 -->
+<!-- phil-dev source-sha256=27b8836903530aebec9bbc3a2faa01ac576f429c7522368eab12ef4c4fe2ddc9 -->
 # Composants
 
 Ce que la base sans classe ne peut pas deviner, dans la couche `phil.components`, et les utilitaires, en tout dernier.
@@ -153,7 +153,9 @@ premier ; `hasActivityCalendar` contient le calendrier et `isActivityLegend`, le
 ## Tableaux
 
 `isStriped` raye les rangées d'un tableau, `hasHover` éclaire celle qui est sous le pointeur, et `isScrollable` est la
-boîte qui fait défiler un tableau trop large pour la page, quand un `figure` ne convient pas.
+boîte qui fait défiler un tableau trop large pour la page, quand un `figure` ne convient pas. Les classes supposent un
+tableau de données à un seul niveau d'en-têtes de colonne, aucun fusionné : voir
+[Tableaux de données](elements.md#tableaux-de-données).
 
 ## Codes QR et code coloré
 
@@ -467,7 +469,10 @@ Chaque recette écrit l'une de ces classes sur chacune de ses parties.
 | Recette | Classes |
 |---|---|
 | Bouton de copie | `isCopyButton`, `isCopyButtonTrigger` |
-| Célébration | `isCelebration`, `isCelebrationMessage`, `isCelebrationCanvas`, posé sur la page sans prendre de clic et jamais dessiné en mouvement réduit |
+| Célébration | `isCelebration`, `isCelebrationSound`, le bouton de ses sons, enfoncé tant qu'ils sont activés et omis sur papier, `isCelebrationMessage`, `isCelebrationCanvas`, posé sur la page sans prendre de clic et jamais dessiné en mouvement réduit |
+| Décor de saison | `isSeasonalDecor`, qui ne prend aucune place ; `isSeasonalDecorCanvas`, posé sur la page sans prendre de clic ; `isSeasonalDecorPoppy`, fixé dans un coin du bas ; `isSeasonalDecorClose`, le bouton qui le ferme, dans l'autre ; `isSeasonalEgg`, un œuf de la chasse, une cible de 2,75 rem ; `isSeasonalDecorCounter`, caché tant qu'il est vide |
+| Podium | `isPodium`, `isPodiumPlaces`, `isPodiumPlace` avec `data-place` de 1 à 3, la deuxième, la première et la troisième côte à côte ; `isPodiumName`, `isPodiumScore`, `isPodiumStep`, sa hauteur selon la place ; `isPodiumMessage`. `data-state="waiting"` garde les marches et les noms en bas, `rising` les lève, la troisième d'abord, seulement sans mouvement réduit |
+| Carte à gratter | `isScratchCard`, `isScratchCardPrize`, `isScratchCardCover`, le canvas sur le prix, gratté sans faire défiler ; `isScratchCardButton`, `isScratchCardMessage`, caché tant qu'il est vide |
 | Bouton animé | `isAnimatedButton` avec `hasShine`, `hasLift` ou `hasArrow` ; `isAnimatedButtonLabel`, `isAnimatedButtonArrow` |
 | Arbre | `isTree`, `isTreeItem`, `isTreeRow`, `isTreeToggle`, `isTreeLabel`, `isTreeGroup` |
 | Note | `isRating`, avec `isReadonly` pour la note seule ; `isRatingLegend`, `isRatingStars`, `isRatingStar`, avec `isFilled` ou `isHalf` en lecture seule ; `isRatingIcon`, `isRatingClear` |
